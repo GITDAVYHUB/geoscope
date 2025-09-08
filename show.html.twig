@@ -1,0 +1,14 @@
+twig
+{% for intervention in interventions %}
+    <p>
+        {{ intervention.nomClient }} 
+        <a href="{{ path('intervention_edit', {id: intervention.id}) }}">Modifier</a>
+        <form method="post" action="{{ path('intervention_delete', {id: intervention.id}) }}" onsubmit="return confirm('Êtes-vous sûr ?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ intervention.id) }}">
+            <button type="submit">Supprimer</button>
+        </form>
+    </p>
+{% endfor %}
+
+<a href="{{ path('intervention_print', {'id': intervention.id}) }}" target="_blank">Imprimer la fiche</a>
+<button onclick="window.print()">Imprimer la fiche</button>

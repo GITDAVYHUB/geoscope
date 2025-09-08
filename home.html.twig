@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" style="max-width:700px;margin:auto;padding:2rem;">
+        <h1>Bienvenue sur la plateforme GeScope</h1>
+        <p>
+            Gérez facilement les interventions de maintenance à domicile.<br>
+            <a href="{{ path('interventions_index') }}" class="btn btn-primary" style="margin-top:1rem;">
+                Voir la liste des interventions
+            </a>
+        </p>
+        <section style="margin-top:2rem;">
+            <h2>Nos services</h2>
+            <ul style="list-style:square;padding-left:1.5rem;">
+                <li>Domotique</li>
+                <li>Plomberie</li>
+                <li>Électricité</li>
+                <li>Climatisation</li>
+                <li>Autres interventions à domicile</li>
+            </ul>
+        </section>
+        <section style="margin-top:2rem;">
+            <a href="{{ path('interventions_create') }}" class="btn btn-success">
+                Demander une intervention
+            </a>
+        </section>
+    </div>
+    <div class="table-responsive">
+    <table class="table ...">
+        ...
+    </table>
+</div>
+{% endblock %}
